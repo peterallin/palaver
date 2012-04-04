@@ -5,5 +5,11 @@ module Conversation
       c.instance_eval &spec
       return c
     end
+
+    def checklist(&spec)
+      c = Checklist.new
+      c.instance_eval &spec
+      return c
+    end
   end
 end
