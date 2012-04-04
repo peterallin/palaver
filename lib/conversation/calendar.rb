@@ -1,7 +1,8 @@
 require 'tempfile'
+require 'conversation/base'
 
 module Conversation
-  class Calendar
+  class Calendar < Conversation::Base
     def initialize
       @text = nil
       @width = nil
@@ -9,20 +10,8 @@ module Conversation
       @default_date = nil
     end
     
-    def text(str)
-      @text = str
-    end
-
     def date(d)
       @default_date = d
-    end
-
-    def width(w)
-      @width = w
-    end
-
-    def height(h)
-      @height = h
     end
 
     def show

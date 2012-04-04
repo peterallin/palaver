@@ -1,8 +1,5 @@
 module Conversation
-  class Checklist
-    def text(str)
-    end
-
+  class Checklist < Conversation::Base
     def option(tag, desc, check=nil)
     end
   end
