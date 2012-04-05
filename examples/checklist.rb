@@ -8,4 +8,7 @@ chosen = dialog_factory.checklist {
   option "bar", "The classic second metasyntactic variable name"
   option "baz", "The classic third metasyntactic variable name"
   option "quux", "A quite unusual metasyntactic variable name"
-}
+}.show
+
+puts chosen
+

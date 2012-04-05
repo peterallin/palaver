@@ -4,9 +4,8 @@ require 'conversation/base'
 module Conversation
   class Calendar < Conversation::Base
     def initialize
+      super
       @text = nil
-      @width = nil
-      @height = nil
       @default_date = nil
     end
     
@@ -19,8 +18,6 @@ module Conversation
         if @default_date then [ @default_date.day, @default_date.month, @default_date.year]
         else [ 0, 0, 0 ]
         end
-      width = @width ? @width : 0
-      height = @height ? @height : 0
       
       tf = Tempfile.new("conversation")
       tfpath = tf.path
