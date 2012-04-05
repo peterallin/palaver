@@ -1,4 +1,5 @@
 require 'tempfile'
+require 'date'
 require 'conversation/base'
 
 module Conversation
