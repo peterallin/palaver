@@ -23,7 +23,7 @@ module Conversation
       tfpath = tf.path
       tf.close
       cmd = 'dialog --calendar "%s" %d %d %d %d %d 2> %s' % [ @text,
-                                                              height, width, 
+                                                              @height, @width, 
                                                               day, month, year,
                                                               tfpath ]
       success = system cmd
