@@ -11,5 +11,11 @@ module Conversation
       c.instance_eval &spec if spec
       return c
     end
+
+    def radiolist(options={}, &spec)
+      c = Radiolist.new(options)
+      c.instance_eval &spec if spec
+      return c
+    end
   end
 end
