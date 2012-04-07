@@ -9,7 +9,7 @@ module Conversation
     def show
       chosen = nil
       with_tempfile do |fname|
-        cmd = "dialog --radiolist '#@text' #@height #@width #@list_height #{@dialog_options.join ' '} 2> #{fname}"
+        cmd = "dialog --radiolist '#@text' #@height #@width #@list_height #{options_string_with_status} 2> #{fname}"
         sucess = system cmd
         if sucess then
           chosen = File.read(fname)
