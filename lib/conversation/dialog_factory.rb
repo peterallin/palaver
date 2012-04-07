@@ -6,9 +6,9 @@ module Conversation
       return c
     end
 
-    def checklist(&spec)
-      c = Checklist.new
-      c.instance_eval &spec
+    def checklist(options={}, &spec)
+      c = Checklist.new(options)
+      c.instance_eval &spec if spec
       return c
     end
   end

@@ -1,8 +1,18 @@
 require 'conversation'
 
 dialog_factory = Conversation::DialogFactory.new
-chosen = dialog_factory.checklist {
-  text "Which do you want?"
+
+chosen1 = dialog_factory.checklist(:text => "Which do you want, hash style?",
+                                   :options => [
+                                                [ "fisk", "A confusing choice for a metasyntactic variable name", :off ],
+                                                [ "foo", "The classic first metasyntactic variable name", :on ],
+                                                [ "bar", "The classic second metasyntactic variable name", :off ],
+                                                [ "baz", "The classic third metasyntactic variable name", :off ],
+                                                [ "quux", "A quite unusual metasyntactic variable name", :off ]
+                                               ]).show
+
+chosen2 = dialog_factory.checklist {
+  text "Which do you want, block style?"
   option "fisk", "A confusing choice for a metasyntactic variable name"
   option "foo", "The classic first metasyntactic variable name", :on
   option "bar", "The classic second metasyntactic variable name"
@@ -10,5 +20,9 @@ chosen = dialog_factory.checklist {
   option "quux", "A quite unusual metasyntactic variable name"
 }.show
 
-puts chosen
+puts "Chosen from the dialog created with the hash style:"
+puts chosen1
+puts
+puts "Chosen from the dialog created with the block style"
+puts chosen2
 
