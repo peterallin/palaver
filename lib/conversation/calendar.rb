@@ -4,22 +4,26 @@ require 'conversation/base'
 
 module Conversation
   class Calendar < Conversation::Base
-    def initialize
-      super
-      @text = nil
+    def initialize(options={})
+      super(options)
       @default_date = nil
+
+      options.each do |option,value|
+        case option
+        when :date then self.date(value)
+        end
+      end
+      
     end
     
     def date(d)
       @default_date = d
     end
-
     def show
       day, month, year =
         if @default_date then [ @default_date.day, @default_date.month, @default_date.year]
         else [ 0, 0, 0 ]
         end
-
       chosen_date = nil
       with_tempfile do |tfpath|
         cmd = 'dialog --calendar "%s" %d %d %d %d %d 2> %s' % [ @text,

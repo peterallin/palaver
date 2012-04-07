@@ -1,8 +1,8 @@
 module Conversation
   class DialogFactory
-    def calendar(&spec)
-      c = Calendar.new
-      c.instance_eval &spec
+    def calendar(options={},&spec)
+      c = Calendar.new(options)
+      c.instance_eval &spec if spec
       return c
     end
 
