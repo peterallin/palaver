@@ -17,5 +17,11 @@ module Conversation
       c.instance_eval &spec if spec
       return c
     end
+
+    def menu(options={}, &spec)
+      c = Menu.new(options)
+      c.instance_eval &spec if spec
+      return c
+    end
   end
 end

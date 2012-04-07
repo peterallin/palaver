@@ -35,7 +35,9 @@ module Conversation
       @dialog_options.map { |o| "'#{o.tag}' '#{o.item}' '#{o.status == :on ? 'on' : 'off'}'" }.join ' '
     end
 
-
+    def options_string_no_status
+      @dialog_options.map { |o| "'#{o.tag}' '#{o.item}'" }.join ' '
+    end
     
   end
 end
