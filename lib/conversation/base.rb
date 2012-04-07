@@ -1,9 +1,17 @@
 module Conversation
   class Base
-    def initialize
+    def initialize(options)
       @text = nil
       @width = 0
       @height = 0
+
+      options.each do |option,value|
+        case option
+        when :width then self.width(value)
+        when :height then self.height(value)
+        when :text then self.text(value)
+        end
+      end
     end
 
     def text(str)
