@@ -1,3 +1,6 @@
+# Copyright (c) 2012, Peter Allin <peter@peca.dk> All rights reserved.
+# See LICENSE file for licensing information.
+
 require 'conversation/list_with_options'
 
 module Conversation
