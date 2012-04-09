@@ -4,15 +4,15 @@
 require 'conversation/list_with_options'
 
 module Conversation
-  class Radiolist < Conversation::ListWithOptions
+  class Menu < Conversation::ListWithOptions
     def initialize(options)
-      super(options)
+      super options
     end
-    
+
     def show
       chosen = nil
       with_tempfile do |fname|
-        cmd = "dialog --radiolist '#@text' #@height #@width #@list_height #{options_string_with_status} 2> #{fname}"
+        cmd = "dialog --menu '#@text' #@height #@width #@list_height #{options_string_no_status} 2> #{fname}"
         sucess = system cmd
         if sucess then
           chosen = File.read(fname)
@@ -20,5 +20,6 @@ module Conversation
       end
       return chosen
     end
+    
   end
 end

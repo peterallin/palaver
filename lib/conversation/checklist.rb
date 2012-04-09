@@ -12,9 +12,9 @@ module Conversation
     def show
       choices = nil
       with_tempfile do |fname|
-        cmd = "dialog --checklist '#@text' #@height #@width #@list_height #{@dialog_options.join ' '} 2> #{fname}"
-        sucess = system cmd
-        if sucess then
+        cmd = "dialog --checklist '#@text' #@height #@width #@list_height #{options_string_with_status} 2> #{fname}"
+        success = system cmd
+        if success then
           choices = File.read(fname).split(" ").map { |s| s[1..-2] }
         end
       end
