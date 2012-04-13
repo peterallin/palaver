@@ -26,5 +26,11 @@ module Conversation
       c.instance_eval &spec if spec
       return c
     end
+
+    def yesno(options={}, &spec)
+      yn = YesNo.new(options)
+      yn.instance_eval &spec if spec
+      return yn
+    end
   end
 end

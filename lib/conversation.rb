@@ -6,5 +6,6 @@ require 'conversation/calendar.rb'
 require 'conversation/checklist.rb'
 require 'conversation/radiolist.rb'
 require 'conversation/menu.rb'
+require 'conversation/yesno.rb'
 
 
