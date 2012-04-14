@@ -4,45 +4,40 @@
 module Conversation
   class DialogFactory
     def calendar(options={},&spec)
-      c = Calendar.new(options)
-      c.instance_eval &spec if spec
-      return c
+      make_dialog(Calendar, options, &spec)
     end
 
     def checklist(options={}, &spec)
-      c = Checklist.new(options)
-      c.instance_eval &spec if spec
-      return c
+      make_dialog(Checklist, options, &spec)
     end
 
     def radiolist(options={}, &spec)
-      c = Radiolist.new(options)
-      c.instance_eval &spec if spec
-      return c
+      make_dialog(Radiolist, options, &spec)
     end
 
     def menu(options={}, &spec)
-      c = Menu.new(options)
-      c.instance_eval &spec if spec
-      return c
+      make_dialog(Menu, options, &spec)
     end
 
     def yesno(options={}, &spec)
-      yn = YesNo.new(options)
-      yn.instance_eval &spec if spec
-      return yn
+      make_dialog(YesNo, options, &spec)
     end
 
     def textbox(options={}, &spec)
-      tb = TextBox.new(options)
-      tb.instance_eval &spec if spec
-      return tv
+      make_dialog(TextBox, options, &spec)
     end
 
     def msgbox(options={}, &spec)
-      mb = MsgBox.new(options)
-      mb.instance_eval &spec if spec
-      return mb
+      make_dialog(MsgBox, options, &spec)
     end
+
+    private
+
+    def make_dialog(cls, options, &spec)
+      d = cls.new(options)
+      d.instance_eval &spec if spec
+      return d
+    end
+    
   end
 end
