@@ -34,10 +34,15 @@ module Conversation
     end
 
     def textbox(options={}, &spec)
-      tv = TextBox.new(options)
-      tv.instance_eval &spec if spec
+      tb = TextBox.new(options)
+      tb.instance_eval &spec if spec
       return tv
     end
 
+    def msgbox(options={}, &spec)
+      mb = MsgBox.new(options)
+      mb.instance_eval &spec if spec
+      return mb
+    end
   end
 end
