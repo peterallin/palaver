@@ -31,6 +31,10 @@ module Conversation
       make_dialog(MsgBox, options, &spec)
     end
 
+    def inputbox(options={}, &spec)
+      make_dialog(InputBox, options, &spec)
+    end
+
     private
 
     def make_dialog(cls, options, &spec)
