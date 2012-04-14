@@ -32,5 +32,12 @@ module Conversation
       yn.instance_eval &spec if spec
       return yn
     end
+
+    def textbox(options={}, &spec)
+      tv = TextBox.new(options)
+      tv.instance_eval &spec if spec
+      return tv
+    end
+
   end
 end
