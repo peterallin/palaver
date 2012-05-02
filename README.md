@@ -1,7 +1,7 @@
 # Conversation -- A 'dialog' API for Ruby
 
 Conversation is a ruby library for making text user interfaces based on the program "dialog"
-(http://invisible-island.net/dialog/). It aims at making all the features fo the "dialog" program
+(http://invisible-island.net/dialog/). It aims at making all the features of the "dialog" program
 available for Ruby programs.
 
 The project was started because the RDialog (http://rdialog.rubyforge.org/) project with similar
