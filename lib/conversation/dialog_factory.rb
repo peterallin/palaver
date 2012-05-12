@@ -43,6 +43,10 @@ module Conversation
       make_dialog(Pause, options, &spec)
     end
 
+    def passwordbox(options={}, &spec)
+      make_dialog(PasswordBox, options, &spec)
+    end
+
     private
 
     def make_dialog(cls, options, &spec)
