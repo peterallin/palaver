@@ -5,12 +5,24 @@ module Conversation
   class InputBox < Conversation::Base
     def initialize(options)
       super(options)
+      @initial = nil
+
+      options.each do |option,value|
+        case option
+        when :initial then self.initial(value)
+        end
+      end
+
+    end
+
+    def initial(text)
+      @initial = text
     end
 
     def show
       answer = nil
       with_tempfile do |fname|
-        cmd = "dialog --inputbox '#@text' #@height #@width 2> #{fname}"
+        cmd = "dialog --inputbox '#@text' #@height #@width '#@initial' 2> #{fname}"
         success = system cmd
         if success  then
           answer = File.read(fname)
