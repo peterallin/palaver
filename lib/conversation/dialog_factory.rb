@@ -47,6 +47,9 @@ module Conversation
       make_dialog(PasswordBox, options, &spec)
     end
 
+    def dselect(options={}, &spec)
+      make_dialog(DSelect, options, &spec)
+    end
     private
 
     def make_dialog(cls, options, &spec)
