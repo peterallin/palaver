@@ -50,6 +50,11 @@ module Conversation
     def dselect(options={}, &spec)
       make_dialog(DSelect, options, &spec)
     end
+
+    def fselect(options={}, &spec)
+      make_dialog(FSelect, options, &spec)
+    end
+
     private
 
     def make_dialog(cls, options, &spec)
