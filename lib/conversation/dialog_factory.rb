@@ -3,59 +3,33 @@
 
 module Conversation
   class DialogFactory
-    def calendar(options={},&spec)
-      make_dialog(Calendar, options, &spec)
-    end
-
-    def checklist(options={}, &spec)
-      make_dialog(Checklist, options, &spec)
-    end
-
-    def radiolist(options={}, &spec)
-      make_dialog(Radiolist, options, &spec)
-    end
-
-    def menu(options={}, &spec)
-      make_dialog(Menu, options, &spec)
-    end
-
-    def yesno(options={}, &spec)
-      make_dialog(YesNo, options, &spec)
-    end
-
-    def textbox(options={}, &spec)
-      make_dialog(TextBox, options, &spec)
-    end
-
-    def msgbox(options={}, &spec)
-      make_dialog(MsgBox, options, &spec)
-    end
-
-    def inputbox(options={}, &spec)
-      make_dialog(InputBox, options, &spec)
-    end
-
-    def infobox(options={}, &spec)
-      make_dialog(InfoBox, options, &spec)
-    end
-
-    def pause(options={}, &spec)
-      make_dialog(Pause, options, &spec)
-    end
-
-    def passwordbox(options={}, &spec)
-      make_dialog(PasswordBox, options, &spec)
-    end
-
-    def dselect(options={}, &spec)
-      make_dialog(DSelect, options, &spec)
-    end
-
-    def fselect(options={}, &spec)
-      make_dialog(FSelect, options, &spec)
-    end
+    @@dialog_types = {
+      :calendar => Calendar,
+      :checklist => Checklist,
+      :radiolist => Radiolist,
+      :menu => Menu,
+      :yesno => YesNo,
+      :textbox => TextBox,
+      :msgbox => MsgBox,
+      :inputbox => InputBox,
+      :infobox => InfoBox,
+      :pause => Pause,
+      :passwordbox => PasswordBox,
+      :dselect => DSelect,
+      :fselect => FSelect
+    }
 
     private
+
+    def method_missing(methodsym, *args, &block)
+      if @@dialog_types.has_key? methodsym then
+        c = @@dialog_types[methodsym]
+        options = args.size == 1 ? args[0] : {}
+        return make_dialog(c, options, &block)
+      else
+        raise NoMethodError.new("Undefined method: #{methodsym} for #{self}", methodsym)
+      end
+    end
 
     def make_dialog(cls, options, &spec)
       d = cls.new(options)
