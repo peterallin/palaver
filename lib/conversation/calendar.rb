@@ -22,6 +22,7 @@ module Conversation
     def date(d)
       @default_date = d
     end
+
     def show
       day, month, year =
         if @default_date then [ @default_date.day, @default_date.month, @default_date.year]

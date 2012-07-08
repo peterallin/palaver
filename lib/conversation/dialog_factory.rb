@@ -16,7 +16,8 @@ module Conversation
       :pause => Pause,
       :passwordbox => PasswordBox,
       :dselect => DSelect,
-      :fselect => FSelect
+      :fselect => FSelect,
+      :form => Form
     }
 
     private
