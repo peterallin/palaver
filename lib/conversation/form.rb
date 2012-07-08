@@ -13,6 +13,9 @@ module Conversation
     end
 
     def show
+      text_width = @entries.map { |e| e.text_width }.max
+      @entries.each { |e| e.update_value_x text_width }
+      
       cmd_intro = "dialog --form '#@text' #@height #@width #@form_height "
       cmd_entries = @entries.map { |e| e.to_cmd_s }.join(' ')
 
@@ -29,7 +32,7 @@ module Conversation
     private
 
     class Entry
-      attr_reader :field_id
+      attr_reader :field_id, :text
       
       def initialize(id, text, text_y, text_x, default_value, value_y, value_x, field_length, input_length)
         @field_id = id
@@ -43,6 +46,14 @@ module Conversation
         @input_length = input_length
       end
 
+      def text_width
+        @text.length + 2
+      end
+
+      def update_value_x(min)
+        @value_x = [ @value_x ? @value_x : 0, min ].max
+      end
+      
       def to_cmd_s
         "'#@text' #@text_y #@text_x '#@default_value' #@value_y #@value_x #@field_length #@input_length"
       end
@@ -62,6 +73,21 @@ module Conversation
     def entry(id, title, text_y, text_x, default_value, value_y, value_x, field_length, input_length)
       newentry = Entry.new(id, title, text_y, text_x, default_value, value_y, value_x, field_length, input_length)
       @entries.push newentry
+    end
+
+    def simple_display_width(width)
+      @simple_display_width = width
+    end
+
+    def simple_text_length(length)
+      @simple_text_length = length
+    end
+
+    def simple_entry(id, title, default_value)
+      @simple_next_y = 1 if not @simple_next_y
+      newentry = Entry.new(id, title, @simple_next_y, 0, default_value, @simple_next_y, nil, @simple_display_width, @simple_text_length)
+      @entries.push newentry
+      @simple_next_y = @simple_next_y + 1
     end
 
   end
