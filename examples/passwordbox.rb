@@ -1,6 +1,6 @@
-require 'conversation'
+require 'palaver'
 
-dialog_factory = Conversation::DialogFactory.new
+dialog_factory = Palaver::DialogFactory.new
 
 # Using the hash based API to ask for a password
 hash_pw = dialog_factory.passwordbox(:text => "Please enter password, hash style").show

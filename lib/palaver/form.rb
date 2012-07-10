@@ -1,9 +1,9 @@
 # Copyright (c) 2012, Peter Allin <peter@peca.dk> All rights reserved.
 # See LICENSE file for licensing information.
 
-module Conversation
+module Palaver
 
-  class Form < Conversation::Base
+  class Form < Palaver::Base
     def initialize(options)
       super(options)
       @entries = []

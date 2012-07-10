@@ -1,6 +1,6 @@
-require 'conversation'
+require 'palaver'
 
-dialog_factory = Conversation::DialogFactory.new
+dialog_factory = Palaver::DialogFactory.new
 
 chosen1 = dialog_factory.checklist(:text => "Which do you want, hash style?",
                                    :options => [

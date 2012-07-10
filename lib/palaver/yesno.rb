@@ -1,8 +1,8 @@
 # Copyright (c) 2012, Peter Allin <peter@peca.dk> All rights reserved.
 # See LICENSE file for licensing information.
 
-module Conversation
-  class YesNo < Conversation::Base
+module Palaver
+  class YesNo < Palaver::Base
     def initialize(optons)
       super optons
     end

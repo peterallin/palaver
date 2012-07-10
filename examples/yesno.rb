@@ -1,6 +1,6 @@
-require 'conversation'
+require 'palaver'
 
-dialog_factory = Conversation::DialogFactory.new
+dialog_factory = Palaver::DialogFactory.new
 
 # Using the hash based API, which makes most sense for this kind of dialog
 likes_hash_based_api = dialog_factory.yesno(:text => "Do you like the hash based API?").show

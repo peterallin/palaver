@@ -1,6 +1,6 @@
-require 'conversation'
+require 'palaver'
 
-dialog_factory = Conversation::DialogFactory.new
+dialog_factory = Palaver::DialogFactory.new
 
 dialog_factory.infobox(:text => "This is information from the hash based api").show
 sleep 2

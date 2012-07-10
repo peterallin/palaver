@@ -1,5 +1,5 @@
 Gem::Specification.new do |s|
-  s.name = "conversation"
+  s.name = "palaver"
   s.version = "0.0.1dev"
   s.platform = Gem::Platform::RUBY
   s.authors = [ "Peter Allin" ]
@@ -10,4 +10,5 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = ">= 1.3.6"
   s.files = `git ls-files`.split "\n"
   s.require_path = "lib"
+  s.homepage = "https://github.com/peterallin/palaver"
 end

@@ -1,6 +1,6 @@
-require 'conversation'
+require 'palaver'
 
-dialog_factory = Conversation::DialogFactory.new
+dialog_factory = Palaver::DialogFactory.new
 
 accepted_hash_style = dialog_factory.pause(:text => "Pause, hash style", :seconds => 15, :width => 40, :height => 8).show
 accepted_block_style = dialog_factory.pause{ text "Pause, block style";  seconds 20; width 30; height 8; }.show

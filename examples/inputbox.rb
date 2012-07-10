@@ -1,6 +1,6 @@
-require 'conversation'
+require 'palaver'
 
-dialog_factory = Conversation::DialogFactory.new
+dialog_factory = Palaver::DialogFactory.new
 
 # Using the hash based API for asking a question in an input box
 answer_hash = dialog_factory.inputbox(:text => "What do you think about the hash based API?", :initial => "I like it very much" ).show

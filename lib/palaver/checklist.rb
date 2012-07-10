@@ -1,10 +1,10 @@
 # Copyright (c) 2012, Peter Allin <peter@peca.dk> All rights reserved.
 # See LICENSE file for licensing information.
 
-require 'conversation/list_with_options'
+require 'palaver/list_with_options'
 
-module Conversation
-  class Checklist < Conversation::ListWithOptions
+module Palaver
+  class Checklist < Palaver::ListWithOptions
     def initialize(options)
       super(options)
     end

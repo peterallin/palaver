@@ -1,7 +1,7 @@
 require 'rake'
 require 'rubygems/package_task'
 
-gemspec = eval(File.read("conversation.gemspec"))
+gemspec = eval(File.read("palaver.gemspec"))
 
 desc "Validate the gemspec"
 task :gemspec do

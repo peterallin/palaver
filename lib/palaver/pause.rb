@@ -1,8 +1,8 @@
 # Copyright (c) 2012, Peter Allin <peter@peca.dk> All rights reserved.
 # See LICENSE file for licensing information.
 
-module Conversation
-  class Pause < Conversation::Base
+module Palaver
+  class Pause < Palaver::Base
     def initialize(options)
       super(options)
       @seconds = 0

@@ -1,9 +1,9 @@
 # Copyright (c) 2012, Peter Allin <peter@peca.dk> All rights reserved.
 # See LICENSE file for licensing information.
 
-module Conversation
+module Palaver
 
-  class ListWithOptions < Conversation::Base
+  class ListWithOptions < Palaver::Base
 
     class Option
       attr_reader :tag, :item, :status

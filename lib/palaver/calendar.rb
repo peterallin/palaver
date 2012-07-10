@@ -3,10 +3,10 @@
 
 require 'tempfile'
 require 'date'
-require 'conversation/base'
+require 'palaver/base'
 
-module Conversation
-  class Calendar < Conversation::Base
+module Palaver
+  class Calendar < Palaver::Base
     def initialize(options={})
       super(options)
       @default_date = nil

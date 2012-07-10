@@ -1,6 +1,6 @@
-require 'conversation'
+require 'palaver'
 
-dialog_factory = Conversation::DialogFactory.new
+dialog_factory = Palaver::DialogFactory.new
 
 # How to view a file in a dialog using the hash API
 dialog_factory.textbox(:filename => ARGV[0]).show

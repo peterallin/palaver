@@ -1,6 +1,6 @@
-require 'conversation'
+require 'palaver'
 
-dialog_factory = Conversation::DialogFactory.new
+dialog_factory = Palaver::DialogFactory.new
 
 # Using the hash based API for showing a msgbox
 dialog_factory.msgbox(:text => "This is a message from the hash based API").show

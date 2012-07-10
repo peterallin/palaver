@@ -1,6 +1,6 @@
-require 'conversation'
+require 'palaver'
 
-dialog_factory = Conversation::DialogFactory.new
+dialog_factory = Palaver::DialogFactory.new
 
 # Using the hash based API for requesting the user to choose a directory
 dir_hash = dialog_factory.dselect(:path => "/").show

@@ -1,7 +1,7 @@
 # Copyright (c) 2012, Peter Allin <peter@peca.dk> All rights reserved.
 # See LICENSE file for licensing information.
 
-module Conversation
+module Palaver
   class Base
     def initialize(options)
       @text = nil
@@ -30,7 +30,7 @@ module Conversation
     end
 
     def with_tempfile
-      tf = Tempfile.new "conversation"
+      tf = Tempfile.new "palaver"
       tfpath = tf.path
       tf.close
       yield tfpath

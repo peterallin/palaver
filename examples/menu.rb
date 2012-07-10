@@ -1,6 +1,6 @@
-require 'conversation'
+require 'palaver'
 
-dialog_factory = Conversation::DialogFactory.new
+dialog_factory = Palaver::DialogFactory.new
 
 chosen1 = dialog_factory.menu(:text => "Choose from the menu, hash style",
                               :options => [
