@@ -10,4 +10,5 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = ">= 1.3.6"
   s.files = `git ls-files`.split "\n"
   s.require_path = "lib"
+  s.homepage = 'http://github.com/peterallin/conversation'
 end
