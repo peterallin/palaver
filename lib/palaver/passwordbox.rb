@@ -24,7 +24,6 @@ module Palaver
       with_tempfile do |fname|
         insecure = @insecure ? "--insecure" : ""
         cmd = "dialog #{insecure} --passwordbox '#@text' #@height #@width 2> #{fname}"
-        #puts cmd
         success = system cmd
         if success  then
           answer = File.read(fname)
