@@ -25,6 +25,8 @@ module Palaver
       options.each do |option|
         case option
         when :insecure then @insecure = true
+        when :ascii_lines then @ascii_lines = true
+        when :no_lines then @no_lines = true
         end
       end
     end
@@ -32,6 +34,8 @@ module Palaver
     def common_options
       options = []
       options.push("--insecure") if @insecure
+      options.push("--ascii-lines") if @ascii_lines
+      options.push("--no-lines") if @no_lines
       return options.join(" ")
     end
     

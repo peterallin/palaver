@@ -2,9 +2,9 @@ require 'palaver'
 
 dialog_factory =
   if ARGV[0] == "secure" then
-    Palaver::DialogFactory.new
+    Palaver::DialogFactory.new(:ascii_lines)
   else
-    Palaver::DialogFactory.new(:insecure)
+    Palaver::DialogFactory.new(:insecure, :no_lines)
   end
 
 # Using the hash based API to ask for a password
