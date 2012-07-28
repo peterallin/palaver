@@ -2,6 +2,8 @@
 # See LICENSE file for licensing information.
 
 module Palaver
+  attr_reader :common_options
+  
   class Base
     def initialize(options)
       @text = nil
@@ -10,6 +12,7 @@ module Palaver
 
       options.each do |option,value|
         case option
+        when :common_options then @common_options = value
         when :width then self.width(value)
         when :height then self.height(value)
         when :text then self.text(value)

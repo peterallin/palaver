@@ -17,7 +17,7 @@ module Palaver
       text_width = @entries.map { |e| e.text_width }.max
       @entries.each { |e| e.update_value_x text_width }
       
-      cmd_intro = "dialog --#@dialogcmd '#@text' #@height #@width #@form_height "
+      cmd_intro = "dialog #@common_options --#@dialogcmd '#@text' #@height #@width #@form_height "
       cmd_entries = @entries.map { |e| e.to_cmd_s }.join(' ')
 
       result = nil

@@ -1,6 +1,12 @@
 require 'palaver'
 
-dialog_factory = Palaver::DialogFactory.new
+
+dialog_factory =
+  if ARGV[0] == "secure" then
+    Palaver::DialogFactory.new
+  else
+    Palaver::DialogFactory.new(:insecure)
+  end
 
 answers = dialog_factory.passwordform {
   text "Foos and their secret texts"
