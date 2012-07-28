@@ -17,7 +17,8 @@ module Palaver
       :passwordbox => PasswordBox,
       :dselect => DSelect,
       :fselect => FSelect,
-      :form => Form
+      :form => Form,
+      :passwordform => PasswordForm
     }
 
     private
