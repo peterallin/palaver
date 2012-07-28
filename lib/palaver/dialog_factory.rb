@@ -34,6 +34,7 @@ module Palaver
             case k
               when :aspect then @aspect = v
               when :backtitle then @backtitle = v
+              when :begin then @begin = v
             end
           end
         end
@@ -47,6 +48,7 @@ module Palaver
       options.push("--no-lines") if @no_lines
       options.push("--aspect #@aspect") if @aspect
       options.push("--backtitle '#@backtitle'") if @backtitle
+      options.push("--begin #{@begin[0]} #{@begin[1]}") if @begin
       return options.join(" ")
     end
     

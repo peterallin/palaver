@@ -1,7 +1,7 @@
 require 'palaver'
 require 'date'
 
-dialog_factory = Palaver::DialogFactory.new(:backtitle => "Defaults to a nasty period")
+dialog_factory = Palaver::DialogFactory.new(:begin => [2,2], :backtitle => "Defaults to a nasty period")
 
 # Using the hash based API with the calendar dialog
 start_date = dialog_factory.calendar(:text => "Choose the start date", :date => Date.new(1939,9,1)).show
