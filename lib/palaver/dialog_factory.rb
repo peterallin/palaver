@@ -33,6 +33,7 @@ module Palaver
           option.each do |k,v|
             case k
               when :aspect then @aspect = v
+              when :backtitle then @backtitle = v
             end
           end
         end
@@ -45,6 +46,7 @@ module Palaver
       options.push("--ascii-lines") if @ascii_lines
       options.push("--no-lines") if @no_lines
       options.push("--aspect #@aspect") if @aspect
+      options.push("--backtitle '#@backtitle'") if @backtitle
       return options.join(" ")
     end
     
