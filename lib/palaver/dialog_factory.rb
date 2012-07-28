@@ -28,6 +28,14 @@ module Palaver
         when :ascii_lines then @ascii_lines = true
         when :no_lines then @no_lines = true
         end
+
+        if option.class == Hash then
+          option.each do |k,v|
+            case k
+              when :aspect then @aspect = v
+            end
+          end
+        end
       end
     end
 
@@ -36,6 +44,7 @@ module Palaver
       options.push("--insecure") if @insecure
       options.push("--ascii-lines") if @ascii_lines
       options.push("--no-lines") if @no_lines
+      options.push("--aspect #@aspect") if @aspect
       return options.join(" ")
     end
     
