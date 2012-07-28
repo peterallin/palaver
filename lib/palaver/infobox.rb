@@ -8,7 +8,7 @@ module Palaver
     end
 
     def show
-      cmd = "dialog --infobox '#@text' #@height #@width"
+      cmd = "dialog #@common_options --infobox '#@text' #@height #@width"
       system cmd
     end
   end

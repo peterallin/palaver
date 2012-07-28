@@ -8,7 +8,7 @@ module Palaver
     end
 
     def show
-      cmd = "dialog --yesno '#@text' #@height #@width"
+      cmd = "dialog #@common_options --yesno '#@text' #@height #@width"
       rc = system cmd
       return  rc
     end

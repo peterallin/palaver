@@ -12,7 +12,7 @@ module Palaver
     def show
       chosen = nil
       with_tempfile do |fname|
-        cmd = "dialog --menu '#@text' #@height #@width #@list_height #{options_string_no_status} 2> #{fname}"
+        cmd = "dialog #@common_options --menu '#@text' #@height #@width #@list_height #{options_string_no_status} 2> #{fname}"
         sucess = system cmd
         if sucess then
           chosen = File.read(fname)

@@ -13,7 +13,7 @@ module Palaver
     end
     
     def show
-      cmd = "dialog --textbox '#@filename' #@height #@width"
+      cmd = "dialog #@common_options --textbox '#@filename' #@height #@width"
       system cmd
     end
     

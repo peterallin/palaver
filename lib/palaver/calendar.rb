@@ -30,10 +30,10 @@ module Palaver
         end
       chosen_date = nil
       with_tempfile do |tfpath|
-        cmd = 'dialog --calendar "%s" %d %d %d %d %d 2> %s' % [ @text,
-                                                                @height, @width, 
-                                                                day, month, year,
-                                                                tfpath ]
+        cmd = "dialog #@common_options --calendar '%s' %d %d %d %d %d 2> %s" % [ @text,
+                                                                                 @height, @width, 
+                                                                                 day, month, year,
+                                                                                 tfpath ]
         success = system cmd
         chosen_date = Date.strptime(File.read(tfpath), "%d/%m/%Y") if success
       end

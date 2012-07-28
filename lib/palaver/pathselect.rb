@@ -20,10 +20,10 @@ module Palaver
     end
 
     def show
-      raise "CAn't open a #{dialog_name} dialog with a path" if not @path
+      raise "Can't open a #{dialog_name} dialog with a path" if not @path
       chosen_file = nil
       with_tempfile do |tfpath|
-        cmd = "dialog --#{dialog_name} '#@path' #@height #@width 2> #{tfpath}"
+        cmd = "dialog #@common_options --#{dialog_name} '#@path' #@height #@width 2> #{tfpath}"
         puts cmd
         success = system cmd
         chosen_file = File.read(tfpath) if success

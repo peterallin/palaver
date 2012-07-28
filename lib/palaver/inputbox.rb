@@ -22,7 +22,7 @@ module Palaver
     def show
       answer = nil
       with_tempfile do |fname|
-        cmd = "dialog --inputbox '#@text' #@height #@width '#@initial' 2> #{fname}"
+        cmd = "dialog #@common_options --inputbox '#@text' #@height #@width '#@initial' 2> #{fname}"
         success = system cmd
         if success  then
           answer = File.read(fname)

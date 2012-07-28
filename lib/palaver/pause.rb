@@ -18,7 +18,7 @@ module Palaver
     end
 
     def show
-      cmd = "dialog --pause '#@text' #@height #@width #@seconds"
+      cmd = "dialog #@common_options --pause '#@text' #@height #@width #@seconds"
       rc = system cmd
       return rc
     end
