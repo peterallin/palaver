@@ -35,6 +35,7 @@ module Palaver
               when :aspect then @aspect = v
               when :backtitle then @backtitle = v
               when :begin then @begin = v
+              when :cancel_label then @cancel_label = v
             end
           end
         end
@@ -49,6 +50,7 @@ module Palaver
       options.push("--aspect #@aspect") if @aspect
       options.push("--backtitle '#@backtitle'") if @backtitle
       options.push("--begin #{@begin[0]} #{@begin[1]}") if @begin
+      options.push("--cancel-label '#@cancel_label'") if @cancel_label
       return options.join(" ")
     end
     
