@@ -1,0 +1,28 @@
+Release notes for Palaver 0.3.0
+===============================
+
+New features:
+
+- Support for the "passwordform" dialog (github issue #16)
+- Support foor the "gaugle" dialog (githus issue #5)
+- Support for options affecting multiple dialogs types in the DialogFactory instead of the
+  individual dialog classes.
+- Support for the following options has been implemented for all currently support dialog types:
+  - ascii-lines
+  - no-lines
+  - aspect
+  - backtitle
+  - begin
+  - cancel-label
+
+
+Incompatabilities with previous versions:
+
+- The PasswordBox class no longer accepts the 'insecure' option, which has been moved to the
+  DialogFactory. See examples/passwordbox.rb.
+
+
+Release notes for Palaver 0.2.0
+===============================
+
+Despite the version number, this was the first release of Palaver.
