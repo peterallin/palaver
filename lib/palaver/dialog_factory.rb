@@ -19,7 +19,8 @@ module Palaver
       :fselect => FSelect,
       :form => Form,
       :passwordform => PasswordForm,
-      :gauge => Gauge
+      :gauge => Gauge,
+      :programbox => ProgramBox
     }
 
     def initialize(*options)
